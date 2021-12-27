@@ -1,0 +1,228 @@
+:root {
+    --navbar-bg-color: rgb(83, 109, 255);
+    --navbar-text-color: rgb(219, 222, 243);
+    --navbar-text-color-focus: white;
+    --navbar-bg-contrast: rgb(53, 77, 212);
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  header {
+    width: 100%;
+    background-color: var(--navbar-bg-color);
+    position: fixed;
+    height: 67px;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #navbar {
+    --navbar-height: 65px;
+    position: fixed;
+    height: var(--navbar-height);
+    background-color: var(--navbar-bg-color);
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+  .navbar-item {
+    margin: 0.8em;
+    width: 100%;
+  }
+  
+  .home-link,
+  .navbar-link {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+  }
+  
+  .home-link:is(:focus, :hover) {
+    color: var(--navbar-text-color-focus);
+  }
+  
+  .navbar-link {
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .navbar-link:is(:focus, :hover) {
+    color: var(--navbar-text-color-focus);
+    background-color: var(--navbar-bg-contrast);
+  }
+  
+  #navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu {
+    background-color: rgb(53, 77, 212);
+    opacity: 1;
+    visibility: visible;
+  }
+  .navbar-links {
+    list-style: none;
+    position: relative;
+    background-color: var(--navbar-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 1.4rem;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgb(53, 77, 212);
+  }
+  
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+    padding: 1em;
+  }
+  
+  .box-contact {
+    padding: 10px 130px;
+  }
+  .box-contact h2 {
+    text-align: center;
+  }
+  .box-contact form {
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    text-align: left;
+  }
+  .box-contact form input {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+  textarea {
+    width: 100%;
+    text-align: left;
+  }
+  button {
+    background-color: var(--navbar-bg-color);
+    width: 50px;
+    border: none;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  button:hover {
+    background-color: rgb(252, 168, 59);
+    cursor: pointer;
+  }
+  
+  @media screen and (min-width: 700px) {
+    #navbar-toggle,
+    #navbar-toggle[aria-expanded="true"] {
+      display: none;
+    }
+  
+    #navbar-menu,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu {
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      display: block;
+      height: 100%;
+    }
+  
+    .navbar-links,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      position: static;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      line-height: 3;
+      background-color: rgb(213, 236, 255);
+    }
+    h2 {
+      color: rgb(41, 45, 59);
+      font-size: 35px;
+    }
+    button {
+      width: 80px;
+      height: 40px;
+      background-color: rgb(83, 109, 255);
+      color: white;
+    }
+  
+    .logo {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .logo-edu {
+      width: 20%;
+      margin: 0 auto;
+    }
+    
+    .logo-edu img {
+      width: 80%;
+      border-radius: 50%;
+    }
+    
+    .logo-edu p {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+  footer {
+    padding: 0px;
+    background-color: rgb(53, 77, 212);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+   }
+  footer img {
+    width: 20px;
+    margin: 5px; 
+   }
+  footer .sosmed {
+    margin-top: 10px;
+   }
+  }
